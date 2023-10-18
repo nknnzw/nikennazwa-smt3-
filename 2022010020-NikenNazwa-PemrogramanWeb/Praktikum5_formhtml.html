@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>form html</title>
+    </head>
+    <body style="background-color: rgba(135, 114, 228, 0.986);">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+        * {
+        font-family: "Poppins", sans-serif;
+        }
+        h2{
+            text-align: center;
+            color: white;
+        }
+        table {
+            margin: 0 auto; 
+        }
+        td {
+                text-align: left;
+                padding: 5px;
+                color: white;
+            }
+    
+            input[type="text"],
+            select,
+            textarea {
+                width: 100%;
+                padding: 5px;
+                border-radius: 5px;
+            }
+            input[type="button"]{
+                border-radius: 5px;   
+            }
+            input[type="file"] {
+            border-radius: 5px;
+            font-family: "Poppins", sans-serif; 
+            }
+            
+    </style>
+    <body>
+        <h2>Fill Out The Form Below</h2>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="Name" placeholder="Input Your Name">
+            </tr>
+            <tr>
+                <td>Gender  </td>
+                <td>
+                    <input type="radio" name="jenis_kelamin"value="Man">Man
+                    <input type="radio" name="jenis_kelamin"value="Woman">Woman
+                </td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input type="text" name="Alamat" placeholder="Input Your Address"></td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>
+                    <select name="Country">
+                        <option value="" selected disabled>Choose Your Country</option>
+                        <option value="Indonesia">Indonesian</option>
+                        <option value="Korea">Korean</option>
+                        <option value="Singapura">Singapore</option>
+                        <option value="Jepang">Japan</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" name="Email" placeholder="Input Your Email"></td>
+            </tr>
+            <tr> 
+                <td>Photo </td>
+                <td><input type="text" name="foto" placeholder="Find Your Photo"> 
+                    <input type="file" name="upload" value="" width="200">
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>Comment
+                    <textarea id="Comment: " name="Comment: " rows="4" cols="50"></textarea>
+                </td>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><input type="button" value="Submit"></td>
+                </tr>
+            </tr>
+        </table>
+
+    </body>
+</html>
