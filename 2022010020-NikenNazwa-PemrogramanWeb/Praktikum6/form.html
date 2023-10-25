@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>form html</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body style="background-color: whitesmoke">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+        * {
+        font-family: "Poppins", sans-serif;
+        }
+        h2{
+            text-align: center;
+            color: black;
+        }
+        table {
+            margin: 0 auto; 
+        }
+        td {
+                text-align: left;
+                padding: 5px;
+                color: black;
+            }
+    
+            input[type="text"],
+            select,
+            textarea {
+                width: 100%;
+                padding: 5px;
+                border-radius: 5px;
+            }
+            input[type="button"]{
+                border-radius: 10px; 
+                padding: 7px;
+                text-align: center;  
+            }
+            input[type="file"] {
+            border-radius: 10px;
+            padding: 7px;
+            }
+            
+    </style>
+    <body>
+        <div class="header">
+            <img src="img/logo poltek.png" alt="file"  width="100" height="120">
+            <h1 style="font-size: 30px ;">Politeknik Balekambang</h1>
+            <p>Balekambang, RT.02/RW.07, Gemiring Lor, Kec. Nalumsari, Kabupaten Jepara, Jawa Tengah 59465</p>
+        </div>
+          
+        <div class="navbar">
+            <a href="prak6.html">Home</a>
+            <div class="dropdown">
+            <button class="dropbtn">Nama Mahasiswa
+                
+            </button>
+            <div class="dropdown-content">
+                <a href="niken.html" target = "orang">Niken Nazwa Salsabillah</a>
+                <a href="winda.html"target="orang">Winda Putri Agustina</a>
+                <a href="salsa.html"target="orang">Salsabila Norsita</a>
+                <a href="yuli.html"target="orang">Yuli Istikhomah</a>
+            </div>
+            </div>
+            <div class="dropdown">
+              <button class="dropbtn">Program Studi
+                  
+              </button>
+              <div class="dropdown-content">
+                  <a href="rpl.html" >Rekayasa Perangkat Lunak (D IV)</a>
+                  <a href="abi.html" >Administrasi Bisnis Internasional (D IV)</a>
+                  <a href="akp.html" >Akuntansi Keuangan Publik (D IV)</a>
+              </div>
+          </div>
+          <div class="menu-button">
+            <a href="form.html">Form Pendaftaran</a>
+        </div>
+        </div>
+        <h2>Isi Formulir Dibawah Ini</h2>
+        <table>
+            <tr>
+                <td>Nama</td>
+                <td><input type="text" name="Name" placeholder="Masukkan Nama Anda">
+            </tr>
+            <tr>
+                <td>Jenis Kelamin  </td>
+                <td>
+                    <input type="radio" name="jenis_kelamin"value="Man">Laki-Laki
+                    <input type="radio" name="jenis_kelamin"value="Woman">Perempuan
+                </td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td><input type="text" name="Alamat" placeholder="Masukkan Alamat Anda"></td>
+            </tr>
+            <tr>
+                <td>Asal Sekolah</td>
+                <td><input type="text" name="asal" placeholder="Masukkan Asal Sekolah Anda"</td>
+            </tr>
+            <tr>
+                <td>Agama</td>
+                <td>
+                    <select name="Agama">
+                        <option value="" selected disabled>Pilih Agama Anda</option>
+                        <option value="islam">Islam</option>
+                        <option value="kristen">Kristen</option>
+                        <option value="hindu">Hindu</option>
+                        <option value="katolik">Katolik</option>
+                        <option value="budha">Budha</option>
+                        <option value="konghucu">Konghucu</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" name="Email" placeholder="Masukkan Email Anda"></td>
+            </tr>
+            <tr>
+                <td>No Telepon/HP</td>
+                <td><input type="text" name="no" placeholder="Masukkan No Telepon/HP Anda"</td>
+            </tr>
+            <tr> 
+                <td>Foto </td>
+                <td><input type="text" name="foto" placeholder="Unggah Foto 3x4 Formal"> 
+                    <input type="file" name="upload" value="" width="200">
+                </td>
+            </tr>
+        </table>
+        <table>
+                    <td></td>
+                    <td><input type="button" value="Submit"></td>
+                </tr>
+            </tr>
+        </table>
+        <div class="footer">
+            <img src="img/logo poltek.png" alt="file" width="50" height="55">
+            <p><font size="3%">Politeknik Balekambang | niken | Balekambang, RT.02/RW.07, Gemiring Lor, Kec. Nalumsari, Kabupaten Jepara, Jawa Tengah 59465</p>
+          </div>
+
+    </body>
+</html>

@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+body {
+    height: 100vh;
+    background-size: cover;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  width: 100%;
+}
+
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+
+ .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; 
+  margin: 0; 
+ }
+
+.navbar a:hover, .dropdown:hover 
+.dropbtn {
+  background-color: rgb(108, 108, 243) ;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+
+.dropdown-content a:hover {
+  background-color: #dde6dd;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 5px;
+  background: #f1f1f1;
+}
+
+
+.header {
+  padding: 5px;
+  text-align: center;
+  background-color: rgb(248, 242, 242);
+}
+.header h1 {
+  font-size: 50px;
+}
+
+
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+
+.right {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+.img2 {
+  background-color: whitesmoke;
+  width: 70%;
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  width: 100%;
+  height: 300px;
+}
+
+.card2 {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  width: 100%;
+  height: 598px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Mengatur konten di tengah vertikal */
+  text-align: center;
+}
+
+.card2 h2 {
+  text-align: center;
+  margin-top: 0; /* Atur margin atas menjadi 0 untuk h2 */
+}
+
+.image {
+  background-color: white;
+  width: 70%;
+  padding: 15px;
+  width: 240px;
+  height: 235px;
+  margin-right: 20px; /* Atur margin kanan untuk memberikan jarak dengan paragraf berikutnya */
+}
+
+.card2 p {
+  margin: 0; /* Atur margin menjadi 0 untuk menghapus margin bawaan pada paragraf */
+}
+
+.card2 p:first-child {
+  margin-top: 10px; /* Atur margin atas pada paragraf pertama untuk memberikan jarak dengan elemen sebelumnya */
+}
+
+.coloum:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.footer {
+  padding: 12px;
+  text-align: left;
+  background: rgb(145, 143, 143);
+  margin-top: 30px;
+  font-size: 12px;
+  display: flex;
+  align-items: center; 
+  width: 100%;
+  height: 4%;
+}
+.footer p{
+  margin-top: 80px;
+}
+
+.footer img {
+  margin-right: 15px; 
+  width: 50px; 
+  height: 55px; 
+  margin-top: 80px;
+}
+
+
+
+
