@@ -81,6 +81,96 @@ body {
   .container-2 p{
     margin-left: 15px;
   }
+.circel {
+      height: 50px; /* Adjust the height */
+      width: 50px; /* Adjust the width */
+      background-color: lightgray;
+      color: black;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+      margin-bottom: 20px;
+      margin-left: 145px;
+  }
+  .circel:hover {
+      background-color: black;
+      transition: 0.4s;
+      color: white;
+  }
+  .circel i {
+      font-size: 25px; /* Adjust the font size */
+  }
+  .contact .btn3 {
+      background-color: black;
+      color: white;
+      outline: none;
+      border: none;
+      height: 40px;
+      width: 140px;
+      border-radius: 4px;
+  }
+
+  .btn3:hover {
+      background: white;
+      color: black;
+      transition: 0.4s;
+      border: 1px solid black;
+  }
+
+  .contact .container-2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .contact .row {
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .contact .col-lg-4 {
+      text-align: center;
+      flex: 1;
+  }
+  .niken{
+    display: flex;
+    height: 15rem;
+    gap: 1rem;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.niken > div {
+    flex: 1;
+    border-radius: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    transition: all .8s cubic-bezier(.25, .4, .45, 1.4);
+}
+.niken > div:hover{
+    flex: 5;
+}
+th, td {
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center; /* Mengganti justify-content dan align-items menjadi text-align */
+    padding: 4px; /* Menambahkan padding untuk sel lebih baik */
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Menambahkan margin atas untuk penempatan yang lebih baik */
+   
+}
+table {
+    width: 80%;
+    margin: 0 auto; /* Menambahkan margin untuk mengatur ke tengah secara horizontal */
+}
+
   .footer{
     width: 1350px;
     height: 50px;
