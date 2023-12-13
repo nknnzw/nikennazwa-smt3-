@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "INSERT INTO user (nama, email, website, comment, gender) VALUES ('$nama', '$email', '$website', '$comment', '$gender')";
 
     if (mysqli_query($conn, $query)) {
-        echo "Data berhasil disimpan!";
+        echo '<script>alert("Data berhasil disimpan!");</script>';
     } else {
         echo "Error: " . $query . "<br>" . mysqli_error($conn);
     }
