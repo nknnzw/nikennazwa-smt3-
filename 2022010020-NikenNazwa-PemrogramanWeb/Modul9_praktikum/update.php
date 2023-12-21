@@ -12,8 +12,38 @@ if (isset($_GET['id'])) {
     header("Location: read.php");
     exit();
 }
-?>
 
+// Handle form submission for updating the survey
+if (isset($_POST['update'])) {
+    $updatedJudul = mysqli_real_escape_string($conn, $_POST['judul']);
+    $updatedLink = mysqli_real_escape_string($conn, $_POST['link']);
+
+    // Check if a file is uploaded
+    if ($_FILES['gambar']['size'] > 0) {
+        // Handle file upload logic here
+        $targetDirectory = "./image";
+        $targetFile = $targetDirectory . basename($_FILES['gambar']['name']);
+        move_uploaded_file($_FILES['gambar']['tmp_name'], $targetFile);
+
+        // Update the database with the file path
+        $updateQuery = "UPDATE surveys SET judul = '$updatedJudul', link = '$updatedLink', gambar = '$targetFile' WHERE id = $id";
+    } else {
+        // Update the database without changing the file path
+        $updateQuery = "UPDATE surveys SET judul = '$updatedJudul', link = '$updatedLink' WHERE id = $id";
+    }
+
+    // Perform the update query
+    $updateResult = mysqli_query($conn, $updateQuery);
+
+    if ($updateResult) {
+        // Redirect to the read.php page after successful update
+        header("Location: read.php");
+        exit();
+    } else {
+        echo "Update failed: " . mysqli_error($conn);
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,8 +101,13 @@ if (isset($_GET['id'])) {
         <label for="judul">Judul Survei:</label>
         <input type="text" name="judul" value="<?= $survey['judul'] ?>" required><br>
 
+        <!-- Display current image -->
+        <?php if (!empty($survey['gambar'])) : ?>
+            <img src="<?= $survey['gambar'] ?>" alt="Current Image" style="max-width: 100%; margin-bottom: 10px;">
+        <?php endif; ?>
+
         <label for="gambar">Choose File:</label>
-        <input type="file" name="gambar" accept="image/*"><br>
+        <input type="file" name="gambar" accept="image/"><br>
 
         <label for="link">Link:</label>
         <input type="text" name="link" value="<?= $survey['link'] ?>" required><br>

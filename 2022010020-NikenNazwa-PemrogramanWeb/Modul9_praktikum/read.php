@@ -88,7 +88,7 @@ $surveys = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <tr>
                     <td><?= $survey['id'] ?></td>
                     <td><?= $survey['judul'] ?></td>
-                    <td><img src="uploads/<?= $survey['gambar'] ?>" alt="Gambar Survei" style="max-width: 100px;"></td>
+                    <td> <img src="<?= $survey['gambar'] ?>" alt="Gambar Survei" style="max-width: 100px;"></td>
                     <td><?= $survey['link'] ?></td>
                     <td class="action-buttons">
                         <a href="update.php?id=<?= $survey['id'] ?>">Update</a>
