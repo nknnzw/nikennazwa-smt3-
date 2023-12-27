@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $link = $_POST['link'];
 
     // Upload image to the server
-    $target_dir = "image/";
+    $targetDirectory = "./image";
     $target_file = $target_dir . basename($_FILES['gambar']['name']);
     move_uploaded_file($_FILES['gambar']['tmp_name'], $target_file);
 
@@ -23,7 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -82,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="text" name="judul" required><br>
 
         <label for="gambar">Choose File:</label>
-        <input type="file" name="gambar" accept="image/" required><br>
+        <input type="file" name="gambar" accept="./image" required><br>
 
         <label for="link">Link:</label>
         <input type="text" name="link" required><br>
