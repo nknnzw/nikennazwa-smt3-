@@ -28,12 +28,15 @@ if(isset($_SESSION['kd_cs'])){
 
 
 				<div class="col-md-4"  style="padding: 3px;">
-					<span><i class="glyphicon glyphicon-envelope"></i> hotwheels.yogyakarta@gmail.com</span>
+					<span><i class="glyphicon glyphicon-envelope"></i> saddamarizona001@gmail.com</span>
 				</div>
 
 
 				<div class="col-md-4"  style="padding: 3px;">
-					<span>hotwheels.yogyakarta</span>
+				<span>
+  				<a href="https://www.instagram.com/hotwheels.yogyakarta?utm_source=ig_web_button_share_sheet&igsh=OGQ5ZDc2ODk2ZA==" target="_blank">hotwheels.yogyakarta</a>
+				</span>
+
 				</div>
 			</center>
 		</div>

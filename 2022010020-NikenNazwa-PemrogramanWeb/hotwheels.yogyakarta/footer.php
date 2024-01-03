@@ -4,9 +4,9 @@
 			<div class="row">
 				<div class="col-md-4">
 					<h3 style="color: #e7241d"><b>HOTWHEELS.YOGYAKARTA</b></h3>
-					<p>Jl. Tanah Merah Indah 1 No.10C</p>
+					<p>Krapyak Kulon, Sewon, Bantul, Yogyakarta</p>
 					<p><i class="glyphicon glyphicon-earphone"></i> +6281215912727</p>
-					<p><i class="glyphicon glyphicon-envelope"></i> hotwheels.yogyakarta@gmail.com</p>
+					<p><i class="glyphicon glyphicon-envelope"></i> saddamarizona001@gmail.com</p>
 				</div>
 				<div class="col-md-4">
 					<h5><b>Menu</b></h5>
