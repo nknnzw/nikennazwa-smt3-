@@ -15,6 +15,7 @@ if(isset($_SESSION['kd_cs'])){
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
 	<script  src="js/jquery.js"></script>
 	<script  src="js/bootstrap.min.js"></script>
+	<script src="https://kit.fontawesome.com/d4dda72d68.js" crossorigin="anonymous"></script>
 
 
 </head>
@@ -31,11 +32,14 @@ if(isset($_SESSION['kd_cs'])){
 					<span><i class="glyphicon glyphicon-envelope"></i> saddamarizona001@gmail.com</span>
 				</div>
 
+				<div class="col-md-4" style="padding: 3px;">
+    <span>
+        <a href="https://www.instagram.com/hotwheels.yogyakarta?utm_source=ig_web_button_share_sheet&igsh=OGQ5ZDc2ODk2ZA==" target="_blank" style="color: white; text-decoration: none;">
+            <i class="fab fa-instagram"></i> hotwheels.yogyakarta
+        </a>
+    </span>
+</div>
 
-				<div class="col-md-4"  style="padding: 3px;">
-				<span>
-  				<a href="https://www.instagram.com/hotwheels.yogyakarta?utm_source=ig_web_button_share_sheet&igsh=OGQ5ZDc2ODk2ZA==" target="_blank">hotwheels.yogyakarta</a>
-				</span>
 
 				</div>
 			</center>
@@ -60,7 +64,7 @@ if(isset($_SESSION['kd_cs'])){
 					<li><a href="index.php">Home</a></li>
 					<li><a href="produk.php">Produk</a></li>
 					<li><a href="about.php">Tentang Kami</a></li>
-					<li><a href="manual.php">Manual Aplikasi</a></li>
+					<li><a href="cara_belanja.php">Cara Belanja</a></li>
 					<?php 
 					if(isset($_SESSION['kd_cs'])){
 					$kode_cs = $_SESSION['kd_cs'];
