@@ -1,50 +1,15 @@
--- phpMyAdmin SQL Dump
--- version 5.0.2
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Jul 27, 2020 at 07:16 AM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.2.32
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `hotwheels`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admin`
---
 
 CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(200) NOT NULL,
-  `password` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `password` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `admin`
---
+INSERT INTO `admin` VALUES("1","admin","$2y$10$AIy0X1Ep6alaHDTofiChGeqq7k/d1Kc8vKQf1JZo0mKrzkkj6M626");
 
-INSERT INTO `admin` (`id`, `username`, `password`) VALUES
-(1, 'admin', '$2y$10$AIy0X1Ep6alaHDTofiChGeqq7k/d1Kc8vKQf1JZo0mKrzkkj6M626');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `bom_produk`
---
 
 CREATE TABLE `bom_produk` (
   `kode_bom` varchar(100) NOT NULL,
@@ -52,28 +17,19 @@ CREATE TABLE `bom_produk` (
   `kode_produk` varchar(100) NOT NULL,
   `nama_produk` varchar(200) NOT NULL,
   `kebutuhan` varchar(200) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `bom_produk`
---
+INSERT INTO `bom_produk` VALUES("B0001","M0002","P0001","Roti Sobek","2");
+INSERT INTO `bom_produk` VALUES("B0001","M0001","P0001","Roti Sobek","4");
+INSERT INTO `bom_produk` VALUES("B0001","M0004","P0001","Roti Sobek","3");
+INSERT INTO `bom_produk` VALUES("B0002","M0001","P0002","Maryam","4");
+INSERT INTO `bom_produk` VALUES("B0002","M0004","P0002","Maryam","3");
+INSERT INTO `bom_produk` VALUES("B0002","M0003","P0002","Maryam","2");
+INSERT INTO `bom_produk` VALUES("B0003","M0002","P0003","Kue tart coklat","2");
+INSERT INTO `bom_produk` VALUES("B0003","M0003","P0003","Kue tart coklat","5");
+INSERT INTO `bom_produk` VALUES("B0003","M0005","P0003","Kue tart coklat","5");
 
-INSERT INTO `bom_produk` (`kode_bom`, `kode_bk`, `kode_produk`, `nama_produk`, `kebutuhan`) VALUES
-('B0001', 'M0002', 'P0001', 'Roti Sobek', '2'),
-('B0001', 'M0001', 'P0001', 'Roti Sobek', '4'),
-('B0001', 'M0004', 'P0001', 'Roti Sobek', '3'),
-('B0002', 'M0001', 'P0002', 'Maryam', '4'),
-('B0002', 'M0004', 'P0002', 'Maryam', '3'),
-('B0002', 'M0003', 'P0002', 'Maryam', '2'),
-('B0003', 'M0002', 'P0003', 'Kue tart coklat', '2'),
-('B0003', 'M0003', 'P0003', 'Kue tart coklat', '5'),
-('B0003', 'M0005', 'P0003', 'Kue tart coklat', '5');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `customer`
---
 
 CREATE TABLE `customer` (
   `kode_customer` varchar(100) NOT NULL,
@@ -81,23 +37,13 @@ CREATE TABLE `customer` (
   `email` varchar(100) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `telp` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `telp` varchar(200) NOT NULL,
+  PRIMARY KEY (`kode_customer`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `customer`
---
+INSERT INTO `customer` VALUES("C0005","Niken","nikennn@gmail.com","nikennazwa","$2y$10$9Xf3I2xnNSjSO1i/z4khBOvHlw5D2pe1eD7afSD8pHBzG2gtJeIvu","081218792083");
 
-INSERT INTO `customer` (`kode_customer`, `nama`, `email`, `username`, `password`, `telp`) VALUES
-('C0002', 'Rafi Akbar', 'a.rafy@gmail.com', 'rafi', '$2y$10$/UjGYbisTPJhr8MgmT37qOXo1o/HJn3dhafPoSYbOlSN1E7olHIb.', '0856748564'),
-('C0003', 'Nagita Silvana', 'bambang@gmail.com', 'Nagita', '$2y$10$47./qEeA/y3rNx3UkoKmkuxoAtmz4ebHSR0t0Bc.cFEEg7cK34M3C', '087804616097'),
-('C0004', 'Nadiya', 'nadiya@gmail.com', 'nadiya', '$2y$10$6wHH.7rF1q3JtzKgAhNFy.4URchgJC8R.POT1osTAWmasDXTTO7ZG', '0898765432');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `inventory`
---
 
 CREATE TABLE `inventory` (
   `kode_bk` varchar(100) NOT NULL,
@@ -105,74 +51,117 @@ CREATE TABLE `inventory` (
   `qty` varchar(200) NOT NULL,
   `satuan` varchar(200) NOT NULL,
   `harga` int(11) NOT NULL,
-  `tanggal` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `tanggal` date NOT NULL,
+  PRIMARY KEY (`kode_bk`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `inventory`
---
+INSERT INTO `inventory` VALUES("M0001","Tepung","76","Kg","1000","2020-07-26");
+INSERT INTO `inventory` VALUES("M0002","Pengembang","0","Kg","1000","2020-07-27");
+INSERT INTO `inventory` VALUES("M0003","Cream","17","Kg","3000","2020-07-26");
+INSERT INTO `inventory` VALUES("M0004","Keju","82","Kg","4000","2020-07-26");
+INSERT INTO `inventory` VALUES("M0005","Coklat","0","Kg","5000","2020-07-27");
 
-INSERT INTO `inventory` (`kode_bk`, `nama`, `qty`, `satuan`, `harga`, `tanggal`) VALUES
-('M0001', 'Tepung', '76', 'Kg', 1000, '2020-07-26'),
-('M0002', 'Pengembang', '0', 'Kg', 1000, '2020-07-27'),
-('M0003', 'Cream', '17', 'Kg', 3000, '2020-07-26'),
-('M0004', 'Keju', '82', 'Kg', 4000, '2020-07-26'),
-('M0005', 'Coklat', '0', 'Kg', 5000, '2020-07-27');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `keranjang`
---
 
 CREATE TABLE `keranjang` (
-  `id_keranjang` int(11) NOT NULL,
+  `id_keranjang` int(11) NOT NULL AUTO_INCREMENT,
   `kode_customer` varchar(100) NOT NULL,
   `kode_produk` varchar(100) NOT NULL,
   `nama_produk` varchar(100) NOT NULL,
   `qty` int(11) NOT NULL,
-  `harga` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `harga` int(11) NOT NULL,
+  PRIMARY KEY (`id_keranjang`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `keranjang`
---
+INSERT INTO `keranjang` VALUES("25","C0005","P0007","Porsche 917 LH","1","45000");
+INSERT INTO `keranjang` VALUES("26","C0005","P0008","89 Mercedes-Benz 560 SEC AMG","1","65000");
 
-INSERT INTO `keranjang` (`id_keranjang`, `kode_customer`, `kode_produk`, `nama_produk`, `qty`, `harga`) VALUES
-(16, 'C0003', 'P0002', 'Maryam', 5, 15000),
-(17, 'C0003', 'P0003', 'Kue tart coklat', 2, 100000);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `produk`
---
 
 CREATE TABLE `produk` (
   `kode_produk` varchar(100) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `image` text NOT NULL,
   `deskripsi` text NOT NULL,
-  `harga` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `harga` int(11) NOT NULL,
+  PRIMARY KEY (`kode_produk`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `produk`
---
+INSERT INTO `produk` VALUES("P0001","Nissan Skyline GTR R34","658aebec07a02.jpg","																											Fast and Furious Premium series 
+																								","300000");
+INSERT INTO `produk` VALUES("P0002","91 Mazda MX-5 Miata","658aecb96ec34.jpg","								Hotwheels Mazda MX-5 Miata 
+									","55000");
+INSERT INTO `produk` VALUES("P0003","Datsun 240z Custom","658af7513c343.jpg","												Fast and Furious series						","70000");
+INSERT INTO `produk` VALUES("P0005","Bugatti Bolide","658af42b1122e.jpg","Hotwheels bugatti bolide 
+Kondisi Card seperti di foto
+			","65000");
+INSERT INTO `produk` VALUES("P0006","Porsche Carrera RS 2.7 ","658af4955c036.jpg","Hotwheels Porsche Carrera RS 2.7 
+Kondisi Card : Loose
+Kondisi Unit : 99%
+			","25000");
+INSERT INTO `produk` VALUES("P0007","Porsche 917 LH","658b997266f16.jpg","Hotwheels Porsche 917 LH
+Kondisi Card : Seperti di foto
+			","45000");
+INSERT INTO `produk` VALUES("P0008","89 Mercedes-Benz 560 SEC AMG","658b9c95c0ce4.jpg","Hotwheels 89 Mercedes-Benz 560 SEC AMG
+Kondisi Card : 99% Spesial
+			","65000");
+INSERT INTO `produk` VALUES("P0009","Ultra Hots series, Chevy El Camino","658ba015c1902.jpg","Hotwheels ultra hots series Chevy El Camino
+Kondisi Card : seperti di foto
+			","40000");
+INSERT INTO `produk` VALUES("P0010","MOPAR series , 71 Dodge Challenger","65a8df30d15e7.jpg","MOPAR series , 71 Dodge Challenger								
+Kondisi Card : Seperti di foto
+																		","45000");
+INSERT INTO `produk` VALUES("P0011","Nissan Maxima","65a8e095d0662.jpg","Nissan Maxima
+Kondisi Card : Seperti di foto
+			","25000");
+INSERT INTO `produk` VALUES("P0012","Ford Mustang","65a8e0db0c369.jpg","Ford Mustang
+Kondisi Card : Seperti di foto
+			","40000");
+INSERT INTO `produk` VALUES("P0013","MCLaren F1","65a8e139086a8.jpg","MCLaren F1
+Kondis Card : Seperti di foto
+			","26000");
+INSERT INTO `produk` VALUES("P0014"," Nissan 3000zx","65a8ea64c500f.jpg"," Nissan 3000zx
+Kondisi Unit: seperti di foto
+			","27000");
+INSERT INTO `produk` VALUES("P0015","Nissan Silvia S15","65a8eab672dbe.jpg"," Nissan Silvia S15
+Kondisi Unit : 99%
+			","120000");
+INSERT INTO `produk` VALUES("P0016","ATSVR","65a8eaed6dab3.jpg","ATS VR
+Kondisi Unit : 97%
+			","23000");
+INSERT INTO `produk` VALUES("P0017","Civic Type R","65a8ec055f89a.jpg","Civic Type R
+Kondisi Unit: 99%, sudah ban karet (unrivet)
+			","70000");
+INSERT INTO `produk` VALUES("P0018","Civic Custom","65a8ec351514e.jpg","Civic Custom
+Kondisi Unit: 99%
+			","50000");
+INSERT INTO `produk` VALUES("P0019"," Mazda Rx-7 Savanna","65a8ec65dfc95.jpg"," Mazda Rx-7 Savanna
+Kondisi Unit: seperti di foto
+			","35000");
+INSERT INTO `produk` VALUES("P0020","PREMIUM STARSKY AND HUTCH series, 76 Grand Torino","65a8ee3d42c12.jpg","PREMIUM STARSKY AND HUTCH series, 76 Grand Torino
+ Kondisi Unit: 97%
+						","60000");
+INSERT INTO `produk` VALUES("P0021"," PREMIUM MODERN CLASSIC series, Volkswagen Jetta Mk3 ","65a8ed89dde06.jpg"," PREMIUM MODERN CLASSIC series, Volkswagen Jetta Mk3
+Kondisi Unit: 99%
+			","100000");
+INSERT INTO `produk` VALUES("P0022"," FAST AND FURIOUS PREMIUM series, Skyline GTR R34","65a8edb98f0c3.jpg"," FAST AND FURIOUS PREMIUM series, Skyline GTR R34
+Kondisi Unit: 99%
+			","250000");
+INSERT INTO `produk` VALUES("P0023","Nissan Silvia S13","65a8ef0749b7f.jpg","Nissan Silvia S13
+Kondisi Unit: 99%
+			","50000");
+INSERT INTO `produk` VALUES("P0024","20 Toyota GR Supra","65a8ef340fd2c.jpg","20 Toyota GR Supra
+Kondisi Unit: 99%
 
-INSERT INTO `produk` (`kode_produk`, `nama`, `image`, `deskripsi`, `harga`) VALUES
-('P0001', 'Roti Sobek', '5f1d915d27dc3.jpg', '																								Roti Enak Sobek Sobek aww\r\n																					', 10000),
-('P0002', 'Maryam', '5f1d9154715a4.jpg', '				Roti araym\r\n						', 15000),
-('P0003', 'Kue tart coklat', '5f1d924614831.jpg', 'Kuetar dengan varian rasa coklat enak dan lumer rasanya\r\n			', 100000);
+			","75000");
+INSERT INTO `produk` VALUES("P0025","Subaru WRX STI","65a8ef5d7084b.jpg","Subaru WRX STI
+Kondisi Unit: 99%
+			","25000");
 
--- --------------------------------------------------------
 
---
--- Table structure for table `produksi`
---
 
 CREATE TABLE `produksi` (
-  `id_order` int(11) NOT NULL,
+  `id_order` int(11) NOT NULL AUTO_INCREMENT,
   `invoice` varchar(200) NOT NULL,
   `kode_customer` varchar(200) NOT NULL,
   `kode_produk` varchar(200) NOT NULL,
@@ -187,245 +176,88 @@ CREATE TABLE `produksi` (
   `kode_pos` varchar(200) NOT NULL,
   `terima` varchar(200) NOT NULL,
   `tolak` varchar(200) NOT NULL,
-  `cek` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `cek` int(11) NOT NULL,
+  PRIMARY KEY (`id_order`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `produksi`
---
+INSERT INTO `produksi` VALUES("15","INV0006","C0005","P0007","Porsche 917 LH","1","45000","0","2323-12-27","jateng","jepara","jepara","123","1","0","0");
+INSERT INTO `produksi` VALUES("16","INV0006","C0005","P0001","Nissan Skyline GTR R34","1","300000","0","2323-12-27","jateng","jepara","jepara","123","1","0","0");
+INSERT INTO `produksi` VALUES("17","INV0007","C0005","P0002","91 Mazda MX-5 Miata","1","55000","Pesanan Baru","2424-01-18","jateng","jepara","jepara","123","0","0","1");
 
-INSERT INTO `produksi` (`id_order`, `invoice`, `kode_customer`, `kode_produk`, `nama_produk`, `qty`, `harga`, `status`, `tanggal`, `provinsi`, `kota`, `alamat`, `kode_pos`, `terima`, `tolak`, `cek`) VALUES
-(8, 'INV0001', 'C0002', 'P0003', 'Kue tart coklat', 1, 100000, 'Pesanan Baru', '2020-07-27', 'Jawa Timur', 'Surabaya', 'Jl.Tanah Merah Indah 1', '60129', '2', '1', 1),
-(9, 'INV0002', 'C0002', 'P0001', 'Roti Sobek', 3, 10000, 'Pesanan Baru', '2020-07-27', 'Jawa Barat', 'Bandung', 'Jl.Jati Nangor Blok C, 10', '30712', '0', '0', 1),
-(10, 'INV0003', 'C0003', 'P0002', 'Maryam', 2, 15000, '0', '2020-07-27', 'Jawa Tengah', 'Yogyakarta', 'Jl.Malioboro, Blok A 10D', '30123', '1', '0', 0),
-(11, 'INV0003', 'C0003', 'P0003', 'Kue tart coklat', 1, 100000, '0', '2020-07-27', 'Jawa Tengah', 'Yogyakarta', 'Jl.Malioboro, Blok A 10D', '30123', '1', '0', 0),
-(12, 'INV0003', 'C0003', 'P0001', 'Roti Sobek', 1, 10000, '0', '2020-07-27', 'Jawa Tengah', 'Yogyakarta', 'Jl.Malioboro, Blok A 10D', '30123', '1', '0', 0),
-(13, 'INV0004', 'C0004', 'P0002', 'Maryam', 1, 15000, 'Pesanan Baru', '2020-07-26', 'Jawa Timur', 'Sidoarjo', 'Jl.KH Syukur Blok C 18 A', '50987', '0', '0', 0);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `report_cancel`
---
-
-CREATE TABLE `report_cancel` (
-  `id_report_cancel` int(11) NOT NULL,
-  `id_order` varchar(100) NOT NULL,
-  `kode_produk` varchar(100) NOT NULL,
-  `jumlah` varchar(100) NOT NULL,
-  `tanggal` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `report_inventory`
---
-
-CREATE TABLE `report_inventory` (
-  `id_report_inv` int(11) NOT NULL,
-  `kode_bk` varchar(100) NOT NULL,
-  `nama_bahanbaku` varchar(100) NOT NULL,
-  `jml_stok_bk` int(11) NOT NULL,
-  `tanggal` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `report_omset`
---
-
-CREATE TABLE `report_omset` (
-  `id_report_omset` int(11) NOT NULL,
-  `invoice` varchar(100) NOT NULL,
-  `jumlah` int(11) NOT NULL,
-  `total_omset` int(11) NOT NULL,
-  `tanggal` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `report _penjualan`
---
 
 CREATE TABLE `report _penjualan` (
-  `id_report_sell` int(11) NOT NULL,
+  `id_report_sell` int(11) NOT NULL AUTO_INCREMENT,
   `invoice` varchar(100) NOT NULL,
   `kode_produk` varchar(100) NOT NULL,
   `nama_produk` varchar(100) NOT NULL,
   `jumlah_terjual` int(11) NOT NULL,
-  `tanggal` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `tanggal` date NOT NULL,
+  PRIMARY KEY (`id_report_sell`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `report_produksi`
---
+
+
+CREATE TABLE `report_cancel` (
+  `id_report_cancel` int(11) NOT NULL AUTO_INCREMENT,
+  `id_order` varchar(100) NOT NULL,
+  `kode_produk` varchar(100) NOT NULL,
+  `jumlah` varchar(100) NOT NULL,
+  `tanggal` date NOT NULL,
+  PRIMARY KEY (`id_report_cancel`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+
+CREATE TABLE `report_inventory` (
+  `id_report_inv` int(11) NOT NULL AUTO_INCREMENT,
+  `kode_bk` varchar(100) NOT NULL,
+  `nama_bahanbaku` varchar(100) NOT NULL,
+  `jml_stok_bk` int(11) NOT NULL,
+  `tanggal` varchar(11) NOT NULL,
+  PRIMARY KEY (`id_report_inv`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+
+CREATE TABLE `report_omset` (
+  `id_report_omset` int(11) NOT NULL AUTO_INCREMENT,
+  `invoice` varchar(100) NOT NULL,
+  `jumlah` int(11) NOT NULL,
+  `total_omset` int(11) NOT NULL,
+  `tanggal` date NOT NULL,
+  PRIMARY KEY (`id_report_omset`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
 
 CREATE TABLE `report_produksi` (
-  `id_report_prd` int(11) NOT NULL,
+  `id_report_prd` int(11) NOT NULL AUTO_INCREMENT,
   `invoice` varchar(100) NOT NULL,
   `kode_produk` varchar(100) NOT NULL,
   `nama_produk` varchar(100) NOT NULL,
   `qty` int(11) NOT NULL,
-  `tanggal` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `tanggal` date NOT NULL,
+  PRIMARY KEY (`id_report_prd`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `report_profit`
---
+
 
 CREATE TABLE `report_profit` (
-  `id_report_profit` int(11) NOT NULL,
+  `id_report_profit` int(11) NOT NULL AUTO_INCREMENT,
   `kode_bom` varchar(100) NOT NULL,
   `invoice` varchar(100) NOT NULL,
   `kode_produk` varchar(100) NOT NULL,
   `jumlah` varchar(11) NOT NULL,
   `total_profit` varchar(11) NOT NULL,
-  `tanggal` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `tanggal` date NOT NULL,
+  PRIMARY KEY (`id_report_profit`),
+  UNIQUE KEY `kode_bom` (`kode_bom`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `customer`
---
-ALTER TABLE `customer`
-  ADD PRIMARY KEY (`kode_customer`);
-
---
--- Indexes for table `inventory`
---
-ALTER TABLE `inventory`
-  ADD PRIMARY KEY (`kode_bk`);
-
---
--- Indexes for table `keranjang`
---
-ALTER TABLE `keranjang`
-  ADD PRIMARY KEY (`id_keranjang`);
-
---
--- Indexes for table `produk`
---
-ALTER TABLE `produk`
-  ADD PRIMARY KEY (`kode_produk`);
-
---
--- Indexes for table `produksi`
---
-ALTER TABLE `produksi`
-  ADD PRIMARY KEY (`id_order`);
-
---
--- Indexes for table `report_cancel`
---
-ALTER TABLE `report_cancel`
-  ADD PRIMARY KEY (`id_report_cancel`);
-
---
--- Indexes for table `report_inventory`
---
-ALTER TABLE `report_inventory`
-  ADD PRIMARY KEY (`id_report_inv`);
-
---
--- Indexes for table `report_omset`
---
-ALTER TABLE `report_omset`
-  ADD PRIMARY KEY (`id_report_omset`);
-
---
--- Indexes for table `report _penjualan`
---
-ALTER TABLE `report _penjualan`
-  ADD PRIMARY KEY (`id_report_sell`);
-
---
--- Indexes for table `report_produksi`
---
-ALTER TABLE `report_produksi`
-  ADD PRIMARY KEY (`id_report_prd`);
-
---
--- Indexes for table `report_profit`
---
-ALTER TABLE `report_profit`
-  ADD PRIMARY KEY (`id_report_profit`),
-  ADD UNIQUE KEY `kode_bom` (`kode_bom`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `keranjang`
---
-ALTER TABLE `keranjang`
-  MODIFY `id_keranjang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
-
---
--- AUTO_INCREMENT for table `produksi`
---
-ALTER TABLE `produksi`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT for table `report_cancel`
---
-ALTER TABLE `report_cancel`
-  MODIFY `id_report_cancel` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `report_inventory`
---
-ALTER TABLE `report_inventory`
-  MODIFY `id_report_inv` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `report_omset`
---
-ALTER TABLE `report_omset`
-  MODIFY `id_report_omset` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `report _penjualan`
---
-ALTER TABLE `report _penjualan`
-  MODIFY `id_report_sell` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `report_produksi`
---
-ALTER TABLE `report_produksi`
-  MODIFY `id_report_prd` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `report_profit`
---
-ALTER TABLE `report_profit`
-  MODIFY `id_report_profit` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
