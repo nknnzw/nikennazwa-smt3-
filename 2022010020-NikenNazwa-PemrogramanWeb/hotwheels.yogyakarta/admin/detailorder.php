@@ -119,7 +119,7 @@ $t_cs = mysqli_fetch_assoc($cs);
                         <tr>
                             <td>Kode Customer</td>
                             <td><?= $t_order['kode_customer']; ?></td>
-                        </tr>
+                        </tr>                                                                                                                                                                                                                                                                        
                         <tr>
                             <td>Nama</td>
                             <td><?= $t_cs['nama']; ?></td>
